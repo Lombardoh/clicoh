@@ -1,5 +1,3 @@
-from importlib.metadata import requires
-from itertools import product
 from rest_framework import serializers
 from .models import Product, Order, OrderDetail
 import requests, json
@@ -12,9 +10,10 @@ class ProductSerializer(serializers.ModelSerializer):
 class OrderDetailerializer(serializers.ModelSerializer):
     price = serializers.FloatField(source='product.price')
     name = serializers.CharField(source='product.name')
+    id = serializers.CharField(source='product.id')
     class Meta:
         model = OrderDetail
-        fields = ['name','cuantity', 'price']
+        fields = ['id', 'name','cuantity', 'price']
 
 #order update
 

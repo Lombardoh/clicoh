@@ -33,5 +33,5 @@ urlpatterns = [
     path('products/<pk>', product_data_detail, name='product_data_detail'),
     path('orders/', order_data_list, name='order_data_list'),
     path('orders/<pk>', order_data_detail, name='order_data_detail'),
-    path('orders/create', order_data_detail_list, name='order-creation'),
+    path('orders-create/', order_data_detail_list, name='order-creation'),
     ]
